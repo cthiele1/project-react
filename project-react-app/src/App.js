@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Explore from "./components/Explore";
 import TrendingRecipes from "./components/TrendingRecipes";
 import News from "./components/News";
+import About from "./components/About";
+import Data from "./components/FoodItems";
 import "./App.css";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
       <Explore />
       <TrendingRecipes />
       <News />
+      <About />
+      <Data />
     </div>
   );
 }
