@@ -1,30 +1,47 @@
-main-heading {
+/* Ensure all images have the same size */
+img {
+  width: 200px; /* Define a fixed width for all images */
+  height: 200px; /* Define a fixed height for all images */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  margin-bottom: 15px; /* Optional: Adds space below each image */
+}
+
+/* Main Heading Section */
+#main-heading {
   text-align: center; /* Center text inside the div */
   padding: 20px; /* Spacing around the content */
 }
 
 h2 {
-  font-size: 2;
-  color: #666;
+  font-size: 2rem; /* Ensure a proper size for h2 */
+  color: #363333;
   margin: 0;
 }
+
+p {
+  color: rgb(47, 44, 44);
+}
+
 body,
 html {
   height: 100%;
   margin: 0;
 }
+
 body {
   background-color: var(--accent-color);
 }
 
+/* Cook Container */
 .cook-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Adjust the grid for 4 columns */
   gap: 20px;
   padding: 20px;
   background-color: var(--container-color);
 }
 
+/* Individual Cook Cards */
 .cook-section {
   display: flex;
   flex-direction: column;
@@ -39,8 +56,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Navigation */
-
+/* Navigation Styles */
 a {
   text-decoration: none;
   color: var(--primary-color);
@@ -57,20 +73,20 @@ body {
     flex: 1;
   }
 }
+
 @media (max-width: 768px) {
   #container {
     display: block;
   }
 }
 
-/* HEADER */
+/* Header Styles */
 #bottomh-nav {
   padding: 8px;
   background-color: var(--secondary-color);
-  padding-left: 0;
-
   display: flex;
   justify-content: center;
+  white-space: nowrap;
 }
 
 #bottomh-nav li {
@@ -85,7 +101,7 @@ body {
   font-size: large;
   color: var(--text-color);
 }
-/* Text in the Black Part of the Header */
+
 .htop-nav a {
   text-decoration: none;
   color: var(--text-color);
@@ -93,31 +109,26 @@ body {
   display: block;
 }
 
-/* Typography */
 .bold {
   font-weight: bold;
   display: flex;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(122, 94, 63);
-  font-size: smaller;
-}
-
-/* Main Navagation*/
+/* Main Navigation */
 .h-nav a {
   text-decoration: none;
   color: var(--text-color);
 }
+
 #main-header {
   background: var(--primary-color);
 }
+
+/* Flex Layout for Container */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-
   .container div {
     width: 100%;
   }
@@ -132,6 +143,7 @@ body {
   --header-color: rgb(59, 59, 59);
   --container-color: rgb(159, 149, 134);
 }
+
 #container {
   display: flex;
   flex-wrap: wrap;
@@ -156,6 +168,7 @@ h3 {
   font-size: larger;
 }
 
+/* Footer Navigation */
 #bottomh-nav {
   padding: 8px;
   background-color: var(--secondary-color);
@@ -172,28 +185,30 @@ h3 {
 
 #bottomh-nav li {
   list-style: none;
-  margin-right: 50px; /* Spacing between items */
+  margin-right: 50px;
 }
 
-/* Hamburger menu */
+/* Hamburger Menu */
 #hamburger-menu div {
   width: 35px;
   height: 5px;
   background-color: black;
   margin: 6px 0;
 }
+
 #bottomh-nav {
   display: none;
 }
+
 #hamburger-menu {
   padding-left: 20px;
   padding-bottom: 20px;
 }
 
-/* Media query for smaller screens */
+/* Media Query for Smaller Screens */
 @media (max-width: 600px) {
   .sidebar-image {
-    max-width: 100px; /* Keep it the same size on smaller screens */
+    max-width: 100px;
   }
   .show {
     display: flex !important;
