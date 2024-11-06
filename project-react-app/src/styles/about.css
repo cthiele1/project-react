@@ -1,0 +1,96 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Box styles */
+.box {
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 45%; /* Each box takes up 45% of the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent content from overflowing */
+  display: flex;
+  flex-direction: column;
+}
+
+.box h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--accent-color);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover; /* Ensures the image fits nicely within the container */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Additional style to center the page and make it more visually appealing */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+p {
+  color: #7f8c8d;
+}
+
+:root {
+  --primary-color: rgb(157, 111, 65);
+  --secondary-color: #655331;
+  --accent-color: #a19983;
+  --text-color: white;
+  --other-color: #c07f46;
+}

@@ -1,22 +1,23 @@
-import React from "react";
-import Header from "./components/Header";
-import Explore from "./components/Explore";
-import TrendingRecipes from "./components/TrendingRecipes";
-import News from "./components/News";
-import About from "./components/About";
-import Data from "./components/FoodItems";
-import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Admin from "./pages/Admin";
+import Recipes from "./pages/Recipes";
+import PopularCooks from "./pages/PopularCooks";
+import Contact from "./pages/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Explore />
-      <TrendingRecipes />
-      <News />
-      <About />
-      <Data />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="admin" element={<Admin />} />
+        <Route path="recipes" element={<Recipes />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="PopularCooks" element={<PopularCooks />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

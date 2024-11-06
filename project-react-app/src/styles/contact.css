@@ -1,0 +1,268 @@
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  padding: 0; /* Remove any padding */
+}
+
+/* Center the form box */
+.box {
+  background-color: var(
+    --secondary-color
+  ); /* Use the existing background color */
+  padding: 20px;
+  width: 400px; /* Set a fixed width for the form box */
+  text-align: center; /* Center the content inside the box */
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for some shadow effect */
+}
+
+/* Rest of the form styles remain unchanged */
+#bottomh-nav {
+  padding: 8px;
+  background-color: var(--secondary-color);
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#bottomh-nav li {
+  list-style: none;
+  margin-right: 50px;
+}
+
+/* Famous Southern Cooking Recipes Section */
+#toph-nav {
+  display: flex;
+  padding-left: 50px;
+  font-size: large;
+  color: var(--text-color);
+}
+
+/* Text in the Black Part of the Header */
+.htop-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 10px;
+  display: block;
+}
+
+/* Typography */
+.bold {
+  font-weight: bold;
+  display: flex;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main Navigation */
+.h-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#main-header {
+  background: var(--primary-color);
+}
+
+.content {
+  background-color: var(--accent-color);
+  padding: 20px; /* Add padding around the content */
+  padding-bottom: 200px;
+}
+
+.large-box {
+  background-color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.small-boxes {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.small-box {
+  background-color: var(--other-color);
+  width: 30%;
+  height: auto;
+  align-items: flex-start;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 10px;
+  padding: 15px;
+}
+
+.small-box h2 {
+  margin-bottom: 10px;
+}
+
+.small-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.title {
+  padding-left: 40px;
+  padding-top: 20px;
+  font-size: larger;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container div {
+    width: 100%;
+  }
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.contact-form,
+.business-hours {
+  width: 48%;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-form h2,
+.business-hours h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.contact-form {
+  background-color: var(--primary-color);
+  margin-right: 50px;
+  padding-right: 30px;
+}
+
+.business-hours {
+  padding: 20px;
+  background-color: var(--primary-color);
+  margin-left: 50px;
+  padding-bottom: 125px;
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#bottomh-nav {
+  padding: 8px;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+#bottomh-nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#bottomh-nav li {
+  list-style: none;
+  margin-right: 50px; /* Spacing between items */
+}
+
+:root {
+  --primary-color: rgb(157, 111, 65);
+  --secondary-color: #655331;
+  --accent-color: #a19983;
+  --text-color: white;
+  --other-color: #c07f46;
+}
+
+/* Hamburger menu */
+#hamburger-menu div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+#bottomh-nav {
+  display: none;
+}
+#hamburger-menu {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .sidebar-image {
+    max-width: 100px; /* Keep it the same size on smaller screens */
+  }
+  .show {
+    display: flex !important;
+  }
+  #bottomh-nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #bottomh-nav li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 600px) {
+  #hamburger-menu {
+    display: none;
+  }
+  #bottomh-nav {
+    display: flex;
+  }
+  #bottomh-nav li {
+    flex: 1;
+  }
+}

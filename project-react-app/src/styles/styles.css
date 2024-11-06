@@ -1,0 +1,274 @@
+:root {
+  --primary-color: rgb(157, 111, 65);
+  --secondary-color: #655331;
+  --accent-color: #a19983;
+  --text-color: white; /* This ensures all text is white */
+  --other-color: #f9a964;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-color); /* Set the background color */
+  color: var(--text-color); /* Ensure all text in body is white */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+  color: var(-text-color);
+}
+
+#main-header {
+  background: var(--primary-color);
+}
+
+#sub-header {
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+}
+
+#sub-header-text {
+  padding: 50px;
+  text-align: center;
+}
+
+#sub-header-box {
+  margin: 0;
+  background-color: var(--secondary-color);
+  padding: 5px;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Sidebar */
+.right-side {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  flex: 1.65;
+}
+
+.sidebar-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-color);
+}
+
+.explore-degree {
+  align-items: stretch;
+  display: flex;
+}
+
+.paying-for-school {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  line-height: 1;
+}
+
+.paying-for-school p {
+  color: var(--text-color);
+}
+
+.button2 {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px;
+  border: 2px solid var(--text-color);
+  font-size: 30px;
+}
+
+.img {
+  margin: 4px;
+  flex: 1;
+  background-color: var(--secondary-color);
+  text-align: left;
+  padding-top: 40px;
+  padding-left: 10px;
+}
+
+.img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Take the Next Step */
+.take-step {
+  display: flex;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+.take-step img {
+  margin-right: 15px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.take-step .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.step-content p {
+  color: var(--text-color);
+  line-height: 1;
+  font-size: larger;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+/* Navigation */
+#bottomh-nav {
+  padding: 8px;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+#bottomh-nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#bottomh-nav li {
+  list-style: none;
+  margin-right: 50px; /* Spacing between items */
+}
+
+/* Famous Southern Cooking Recipes Section */
+#toph-nav {
+  padding-top: 20px;
+  padding-left: 50px;
+  font-size: large;
+  color: var(--text-color);
+}
+
+.htop-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 10px;
+  display: block;
+}
+
+/* Typography */
+.bold {
+  font-weight: bold;
+  display: flex;
+}
+
+/* Main Navigation */
+.h-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.title {
+  padding-left: 40px;
+}
+
+.title-text {
+  padding-left: 40px;
+}
+
+@media (min-width: 900px) {
+  #toph-nav ul,
+  .h-nav {
+    display: flex;
+  }
+  #toph-nav li {
+    flex: 1;
+  }
+}
+
+.sidebar-image {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--other-color);
+  display: block;
+}
+
+.sidebar-image img {
+  width: 100%;
+  display: block;
+}
+
+.imgcolor {
+  background-color: var(--other-color);
+}
+
+/* Hamburger menu */
+#hamburger-menu div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+#bottomh-nav {
+  display: none;
+}
+
+#hamburger-menu {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .sidebar-image {
+    max-width: 100px; /* Keep it the same size on smaller screens */
+  }
+  .show {
+    display: flex !important;
+  }
+  #bottomh-nav ul {
+    flex-direction: column; /* Stack items on small screens */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #bottomh-nav li {
+    width: 100%; /* Full width for mobile items */
+    text-align: center;
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 600px) {
+  #hamburger-menu {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+  #bottomh-nav {
+    display: flex; /* Show nav on larger screens */
+  }
+  #bottomh-nav li {
+    flex: 1;
+  }
+}

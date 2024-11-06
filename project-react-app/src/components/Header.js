@@ -1,41 +1,55 @@
 import React from "react";
-import "./Header.css";
+import { Link } from "react-router-dom"; // Import Link component
+import "../styles/styles.css";
 
-const Header = () => {
+export default function Header() {
   return (
-    <header id="main-header">
-      <nav id="toph-nav" className="htop-nav">
-        <h1>Famous Southern Cooking Recipes</h1>
-      </nav>
-      <div id="hamburger-menu">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav id="bottomh-nav" className="h-nav">
-        <ul className="bold">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About Us</a>
-          </li>
-          <li>
-            <a href="recipes.html">Recipes</a>
-          </li>
-          <li>
-            <a href="cooks.html">Popular Cooks</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact Us</a>
-          </li>
-          <li>
-            <a href="admin.html">Admin Page</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
+    <>
+      <header id="main-header">
+        <nav id="toph-nav" className="htop-nav">
+          <h1>Famous Southern Cooking Recipes</h1>
+        </nav>
+        <div id="hamburger-menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
-export default Header;
+        <nav id="bottomh-nav" className="h-nav">
+          <ul className="bold">
+            <li>
+              <Link to="/Home">
+                <h1>Home</h1>
+              </Link>
+            </li>
+            <li>
+              <Link to="/About">
+                <h1>About Us</h1>
+              </Link>
+            </li>
+            <li>
+              <Link to="/Recipes">
+                <h1>Recipes</h1>
+              </Link>
+            </li>
+            <li>
+              <Link to="/PopularCooks">
+                <h1>Popular Cooks</h1>
+              </Link>
+            </li>
+            <li>
+              <Link to="/Contact">
+                <h1>Contact Us</h1>
+              </Link>
+            </li>
+            <li>
+              <Link to="/Admin">
+                <h1>Admin Page</h1>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
+  );
+}

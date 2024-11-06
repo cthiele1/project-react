@@ -1,13 +1,9 @@
-import React from "react";
-import Header from "./Header";
-import "./About.css";
-
-import stock from "../images/stockphoto.jpg";
-
-const About = () => {
+import "../styles/about.css";
+import Header from "../components/Header";
+export default function Dinner() {
   return (
-    <div>
-      <Header />
+    <>
+      <Header />;
       <div className="container">
         <div className="box">
           <h1>History</h1>
@@ -32,15 +28,7 @@ const About = () => {
             cultural significance of traditional dishes. It seeks to make
             Southern cooking accessible to everyone, encouraging home cooks of
             all skill levels to experiment with recipes while highlighting local
-            ingredients and seasonal produce. By fostering community engagement
-            through user-generated content and social media interactions, the
-            website promotes the diverse influences within Southern cuisine,
-            including contributions from African American, Native American, and
-            immigrant cultures. Additionally, it aspires to create visually
-            engaging content that inspires creativity, serves as a comprehensive
-            resource for cooking techniques and meal planning, and encourages
-            culinary tourism by showcasing iconic dishes and the regions they
-            come from.
+            ingredients and seasonal produce.
           </p>
         </div>
         <div className="box">
@@ -72,23 +60,13 @@ const About = () => {
             have promoted fresh, seasonal ingredients, supporting regional
             agriculture. High-quality visual content, including appealing photos
             and videos, enhances user engagement and inspires culinary
-            exploration. The site has garnered recognition from culinary
-            organizations and food bloggers for its contributions to Southern
-            food culture, alongside significant social media growth that
-            connects a global audience. Additionally, it has successfully
-            highlighted iconic Southern dishes to encourage culinary tourism and
-            has established a comprehensive resource hub with cooking techniques
-            and meal planning guides, all while promoting diverse voices and
-            recipes that reflect the rich tapestry of influences within Southern
-            cooking.
+            exploration.
           </p>
         </div>
         <div className="image">
-          <img src={stock} alt="Southern Cooking" />
+          <img src="/images/stockphoto.jpg" alt="Southern Cooking" />
         </div>
       </div>
-    </div>
+    </>
   );
-};
-
-export default About;
+}
