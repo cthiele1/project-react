@@ -1,5 +1,8 @@
 import "../styles/styles.css";
 import Header from "../components/Header";
+import Box1 from "../components/Box1";
+import Box2 from "../components/Box2";
+import Box3 from "../components/Box3";
 
 export default function Home() {
   return (
@@ -68,53 +71,9 @@ export default function Home() {
             test of time and are sure to delight your taste buds!
           </p>
         </div>
-        <div className="img">
-          <img
-            src="/images/maccheese.jpeg"
-            alt="Mac and Cheese"
-            width="300"
-            height="150"
-          />
-          <h4>Mac and Cheese</h4>
-          <p>
-            {" "}
-            This recipe for Southern-style mac and cheese is baked rather than
-            made on the stovetop, meaning you can easily slice portions to
-            serve. The combination of cheddar, mozzarella and gouda cheeses is
-            accented by mustard and Cajun seasonings for a nice kick.{" "}
-          </p>
-        </div>
-        <div className="img">
-          <img
-            src="/images/pecanpie.jpeg"
-            alt="Pecan Pie"
-            width="300"
-            height="150"
-          />
-          <h4>Pecan Pie</h4>
-          <p>
-            Pecan trees grow wild throughout much of the Southern United States,
-            and the trees' nuts feature in many local specialties. This iconic
-            Southern pie makes use of these sweet nuts that form a crunchy crust
-            over a layer of ooey-gooey filling.{" "}
-          </p>
-        </div>
-        <div className="img">
-          <img
-            src="/images/buiscuits.jpeg"
-            alt="Biscuits"
-            width="300"
-            height="150"
-          />
-          <h4>Biscuits</h4>
-          <p>
-            {" "}
-            Biscuits are a favorite Southern quick bread that takes little time
-            to prepare since they don't require yeast or proofing and get their
-            rise from baking powder. These fluffy biscuits are great with any
-            meal and can be the perfect vessels for sweet or savory fillings.
-          </p>
-        </div>
+        <Box1 />
+        <Box2 />
+        <Box3 />
 
         <div className="take-step">
           <img

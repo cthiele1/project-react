@@ -18,7 +18,7 @@ export default function Header() {
         <nav id="bottomh-nav" className="h-nav">
           <ul className="bold">
             <li>
-              <Link to="/Home">
+              <Link to="/">
                 <h1>Home</h1>
               </Link>
             </li>

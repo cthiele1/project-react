@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "../styles/cooks.css"; // Assuming you have styles for the cook cards
+import "../styles/cooks.css";
 import Header from "../components/Header";
-import cooksData from "../json/cooks.json"; // Importing the JSON file
+import cooksData from "../json/cooks.json";
 
 export default function PopularCooks() {
   const [cooks, setCooks] = useState([]);
 
   useEffect(() => {
-    // Set the cooks data from the imported JSON
     setCooks(cooksData);
-  }, []); // Empty dependency array means this runs once when the component mounts
+  }, []);
 
   return (
     <>
@@ -24,7 +23,7 @@ export default function PopularCooks() {
             cooks.map((cook) => (
               <div className="cook-card" key={cook._id}>
                 <img
-                  src={cook.img_name} // Display the image of the cook
+                  src={cook.img_name}
                   alt={cook.name}
                   className="cook-image"
                 />
