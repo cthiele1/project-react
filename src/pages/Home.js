@@ -11,7 +11,7 @@ export default function Home() {
       <div className="explore-degree">
         <div className="imgcolor">
           <div className="sidebar-image">
-            <img src="/images/projectimage1.jpg" alt="Sidebar" />
+            <img src="images/projectimage1.jpg" alt="Sidebar" />
           </div>
         </div>
         <div className="right-side">
@@ -77,7 +77,7 @@ export default function Home() {
 
         <div className="take-step">
           <img
-            src="/images/newsimage.jpg"
+            src="images/newsimage.jpg"
             alt="News "
             width="200"
             height="200"
