@@ -6,7 +6,7 @@ export default function Recipe1() {
     <>
       <section className="column">
         <h3>German Chocolate Cake</h3>
-        <img src="/images/gcake.jpg" alt="Recipe 1 " height="200" width="200" />
+        <img src="images/gcake.jpg" alt="Recipe 1 " height="200" width="200" />
 
         <p>
           Even though the name may indicate otherwise, the German Chocolate Cake

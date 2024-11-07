@@ -6,7 +6,7 @@ export default function Box2() {
     <>
       <div className="img">
         <img
-          src="/images/pecanpie.jpeg"
+          src="images/pecanpie.jpeg"
           alt="Pecan Pie"
           width="300"
           height="150"

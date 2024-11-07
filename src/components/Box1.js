@@ -6,7 +6,7 @@ export default function Box1() {
     <>
       <div className="img">
         <img
-          src="/images/maccheese.jpeg"
+          src="images/maccheese.jpeg"
           alt="Mac and Cheese"
           width="300"
           height="150"

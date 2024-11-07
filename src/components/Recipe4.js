@@ -8,7 +8,7 @@ export default function Recipe4() {
         <h3>Tomato, Cheddar, And Bacon Pie</h3>
 
         <img
-          src="/images/cheddarpie.jpg"
+          src="images/cheddarpie.jpg"
           alt="Recipe 4"
           height="200"
           width="200"

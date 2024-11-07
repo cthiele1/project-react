@@ -8,7 +8,7 @@ export default function Recipe3() {
         <h3>Southern Skillet Cornbread</h3>
 
         <img
-          src="/images/skilletcornbread.jpg"
+          src="images/skilletcornbread.jpg"
           alt="Recipe 3 "
           height="200"
           width="200"

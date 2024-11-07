@@ -8,7 +8,7 @@ export default function Recipe2() {
         <h3>Southern Fried Green Tomatoes</h3>
 
         <img
-          src="/images/friedtomato.jpg"
+          src="images/friedtomato.jpg"
           alt="Recipe 2"
           height="200"
           width="200"

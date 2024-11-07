@@ -6,7 +6,7 @@ export default function Box3() {
     <>
       <div className="img">
         <img
-          src="/images/buiscuits.jpeg"
+          src="images/buiscuits.jpeg"
           alt="Biscuits"
           width="300"
           height="150"
