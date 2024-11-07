@@ -64,7 +64,7 @@ export default function Dinner() {
           </p>
         </div>
         <div className="image">
-          <img src="/images/stockphoto.jpg" alt="Southern Cooking" />
+          <img src="images/stockphoto.jpg" alt="Southern Cooking" />
         </div>
       </div>
     </>
