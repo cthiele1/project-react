@@ -1,8 +1,8 @@
-import "../styles/styles.css";
 import Header from "../components/Header";
 import Box1 from "../components/Box1";
 import Box2 from "../components/Box2";
 import Box3 from "../components/Box3";
+import "../styles/styles.css";
 
 export default function Home() {
   return (

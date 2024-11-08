@@ -1,55 +1,11 @@
 /* HEADER */
-/*Header Part that is Garnet */
-#bottomh-nav {
-  padding: 8px;
-  background-color: var(--secondary-color);
-  padding-left: 0;
-
-  display: flex;
-  justify-content: center;
-}
-
-#bottomh-nav li {
-  list-style: none;
-  margin-right: 50px;
-}
-body {
-  background-color: var(--accent-color);
-}
-
-/* Famous Southern Cooking Recipes Section */
-#toph-nav {
-  display: flex;
-  padding-left: 50px;
-  font-size: large;
-  color: var(--text-color);
-}
-/* Text in the Black Part of the Header */
-.htop-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 10px;
-  display: block;
-}
-
-/* Typography */
-.bold {
-  font-weight: bold;
-  display: flex;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Main Navagation*/
-.h-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-#main-header {
-  background: var(--primary-color);
-}
+
 .box {
   width: 700px;
   height: 700px;
@@ -61,11 +17,6 @@ body {
   padding: 20px;
 }
 
-.container {
-  display: flex;
-  background-color: var(--accent-color);
-  padding-left: 450px;
-}
 .text-box {
   text-align: center;
   margin-top: 10px;
@@ -85,10 +36,6 @@ body {
   width: 100%;
   max-width: 400px;
   text-align: center;
-}
-
-.header {
-  margin-bottom: 15px;
 }
 
 .text-box {
@@ -134,49 +81,6 @@ body {
 #hamburger-menu {
   padding-left: 20px;
   padding-bottom: 20px;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.box {
-  padding: 20px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 15px;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 /* Media query for smaller screens */

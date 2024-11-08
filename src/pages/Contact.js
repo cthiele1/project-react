@@ -1,7 +1,7 @@
-import "../styles/contact.css";
 import Header from "../components/Header";
 import ContactPages from "../components/ContactPages";
 import Map from "../components/Map";
+import "../styles/contact.css";
 
 import React from "react";
 const ContactUs = () => {

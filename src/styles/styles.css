@@ -6,29 +6,15 @@
   --other-color: #f9a964;
 }
 
-#main-header {
-  background: var(--primary-color);
-  color: aqua;
-}
-
-/* First Header under the big picture */
-#sub-header {
-  text-align: center;
-  color: var(--text-color);
-  position: relative;
-}
-
-#sub-header-text {
-  padding: 50px;
-  text-align: center;
-}
-
-#sub-header-box {
-  margin: 0;
-  background-color: var(--secondary-color);
-  padding: 5px;
-  display: inline-block;
-  text-align: left;
+h1 {
+  display: block;
+  font-size: 1em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
 }
 
 /* Sidebar */
@@ -51,6 +37,10 @@
   background-color: var(--primary-color);
 }
 
+.title {
+  padding-left: 40px;
+}
+
 .explore-degree {
   align-items: stretch;
   display: flex;
@@ -63,11 +53,19 @@
   color: var(--text-color);
   line-height: 1;
 }
-
-.paying-for-school p {
-  color: var(--text-color);
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
 .button2 {
   text-decoration: none;
   display: inline-block;
@@ -78,7 +76,6 @@
   border: 2px solid var(--text-color);
   font-size: 30px;
 }
-
 .img {
   margin: 4px;
   flex: 1;
@@ -86,8 +83,8 @@
   text-align: left; /* Keep content left-aligned */
   padding-top: 40px;
   padding-left: 10px;
+  padding-bottom: 12px;
 }
-
 .img img {
   max-width: 100%;
   height: auto;
@@ -126,66 +123,6 @@
   padding-right: 20px;
 }
 
-/* Navigation */
-
-#bottomh-nav {
-  padding: 8px;
-  background-color: var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  white-space: nowrap;
-}
-
-#bottomh-nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-#bottomh-nav li {
-  list-style: none;
-  margin-right: 50px; /* Spacing between items */
-}
-
-/* Famous Southern Cooking Recipes Section */
-#toph-nav {
-  padding-top: 20px;
-  padding-left: 50px;
-  font-size: large;
-  color: var(--text-color);
-}
-
-.htop-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 10px;
-  display: block;
-}
-
-/* Typography */
-.bold {
-  font-weight: bold;
-  display: flex;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Main Navigation */
-.h-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.title {
-  padding-left: 40px;
-}
-
-.title-text {
-  padding-left: 40px;
-}
-
 @media (min-width: 900px) {
   #toph-nav ul,
   .h-nav {
@@ -196,37 +133,15 @@ body {
   }
 }
 
-.sidebar-image {
-  width: 100%;
-  max-width: 100%;
-  background-color: var(--other-color);
-  display: block;
-}
-
 .sidebar-image img {
   width: 100%;
   display: block;
-}
-
-.imgcolor {
-  background-color: var(--other-color);
-}
-
-/* Hamburger menu */
-#hamburger-menu div {
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-}
-
-#bottomh-nav {
-  display: none;
-}
-
-#hamburger-menu {
-  padding-left: 20px;
-  padding-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Media query for smaller screens */

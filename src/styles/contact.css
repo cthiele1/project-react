@@ -166,18 +166,9 @@ button {
   color: white;
   border: none;
 }
-
-.contact-form {
-  background-color: var(--primary-color);
-  margin-right: 50px;
-  padding-right: 30px;
-}
-
-.business-hours {
-  padding: 20px;
-  background-color: var(--primary-color);
-  margin-left: 50px;
-  padding-bottom: 125px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
 
 .map {

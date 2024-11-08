@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
+import "../styles/admin.css";
 
 export default function Dinner() {
   const [formData, setFormData] = useState({

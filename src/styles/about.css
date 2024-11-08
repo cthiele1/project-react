@@ -7,7 +7,7 @@
 
 /* Container styles */
 .container {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
@@ -23,7 +23,6 @@
   flex: 1 1 45%; /* Each box takes up 45% of the container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Prevent content from overflowing */
-  display: flex;
   flex-direction: column;
 }
 
@@ -41,13 +40,6 @@
   color: var(--accent-color);
   overflow-wrap: break-word;
   word-wrap: break-word;
-}
-
-.image {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 20px;
 }
 
 .image img {
@@ -77,14 +69,6 @@ body {
   background-color: #f4f4f4;
   color: var(--primary-color);
   line-height: 1.5;
-}
-
-h1 {
-  color: #2c3e50;
-}
-
-p {
-  color: #7f8c8d;
 }
 
 :root {
