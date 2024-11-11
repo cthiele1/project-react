@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/cooks.css";
 import Header from "../components/Header";
-import House from "../components/House"; // Ensure this is imported correctly
+import House from "../components/House"; // Ensure the import is correct
 import axios from "axios";
 
 const PopularCooks = () => {
@@ -12,7 +12,7 @@ const PopularCooks = () => {
       const response = await axios.get(
         "https://cthiele1.github.io/csce242/json/cooks.json"
       );
-      setHousePlans(response.data);
+      setHousePlans(response.data); // Assuming response.data contains name, hometown, imageUrl, etc.
     })();
   }, []);
 
@@ -26,10 +26,11 @@ const PopularCooks = () => {
       {housePlans.map((housePlan, index) => {
         return (
           <House
+            img_name={`cook${index + 1}.jpg`}
             key={index}
             name={housePlan.name}
             hometown={housePlan.hometown}
-            recipe={housePlan.favorite_recipe}
+            favorite_recipe={housePlan.favorite_recipe}
             rating={housePlan.rating}
             goals={housePlan.goals}
           />
