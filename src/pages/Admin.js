@@ -2,39 +2,38 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import "../styles/admin.css";
 
-export default function Dinner() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+const AdminLoginForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
+  const [messageClass, setMessageClass] = useState("");
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+    formData.append("access_key", "8be17655-ed74-499a-8721-853078ff57ac");
 
     try {
-      const response = await fetch("YOUR_API_ENDPOINT", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: data,
+        body: formData,
       });
 
-      const result = await response.json();
-      setResponseMessage(result.message || "Form submitted successfully!");
+      if (response.ok) {
+        setResponseMessage("Form received!");
+        setMessageClass("message success");
+      } else {
+        setResponseMessage("Form not received. Please try again.");
+        setMessageClass("message error");
+      }
     } catch (error) {
-      setResponseMessage("Something went wrong. Please try again later.");
+      setResponseMessage("An error occurred. Please try again.");
+      setMessageClass("message error");
     }
   };
 
@@ -48,24 +47,17 @@ export default function Dinner() {
             This is the admin page for admin users to submit the form to add
             different recipes.
           </p>
-          <br />
-          <br />
-          <form id="contactForm" onSubmit={handleSubmit}>
-            <input
-              type="hidden"
-              name="access_key"
-              value="8be17655-ed74-499a-8721-853078ff57ac"
-            />
 
+          <form id="contactForm" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name:</label>
               <input
                 type="text"
                 name="name"
                 id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Your Name"
-                value={formData.name}
-                onChange={handleInputChange}
                 required
               />
             </div>
@@ -76,9 +68,9 @@ export default function Dinner() {
                 type="email"
                 name="email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
-                value={formData.email}
-                onChange={handleInputChange}
                 required
               />
             </div>
@@ -89,20 +81,25 @@ export default function Dinner() {
                 name="message"
                 id="message"
                 rows="4"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Enter your message here..."
-                value={formData.message}
-                onChange={handleInputChange}
                 required
-              />
+              ></textarea>
             </div>
 
             <button type="submit">Submit Form</button>
-            <div id="responseMessage" className="message">
-              {responseMessage}
-            </div>
+
+            {responseMessage && (
+              <div id="responseMessage" className={messageClass}>
+                {responseMessage}
+              </div>
+            )}
           </form>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default AdminLoginForm;
