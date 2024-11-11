@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/cooks.css";
 import Header from "../components/Header";
-import House from "../components/House"; // Ensure the import is correct
+import House from "../components/House";
 import axios from "axios";
 
 const PopularCooks = () => {
@@ -9,8 +9,10 @@ const PopularCooks = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3000/api/house_plans");
-      setHousePlans(response.data); // Assuming response.data contains name, hometown, imageUrl, etc.
+      const response = await axios.get(
+        "https://inclass-backend.onrender.com/api/house_plans"
+      );
+      setHousePlans(response.data);
     })();
   }, []);
 
@@ -21,19 +23,22 @@ const PopularCooks = () => {
         <h2>These are the main contributors to this website:</h2>
       </div>
       <br />
-      {housePlans.map((housePlan, index) => {
-        return (
-          <House
-            img_name={`cook${index + 1}.jpg`}
-            key={index}
-            name={housePlan.name}
-            hometown={housePlan.hometown}
-            favorite_recipe={housePlan.favorite_recipe}
-            rating={housePlan.rating}
-            goals={housePlan.goals}
-          />
-        );
-      })}
+      <div className="cook-container">
+        {housePlans.map((housePlan, index) => {
+          return (
+            <div className="cook-section" key={index}>
+              <House
+                img_name={`cook${index + 1}.jpg`}
+                name={housePlan.name}
+                hometown={housePlan.hometown}
+                favorite_recipe={housePlan.favorite_recipe}
+                rating={housePlan.rating}
+                goals={housePlan.goals}
+              />
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
