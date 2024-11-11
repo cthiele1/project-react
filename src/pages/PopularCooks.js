@@ -9,9 +9,7 @@ const PopularCooks = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(
-        "https://cthiele1.github.io/csce242/json/cooks.json"
-      );
+      const response = await axios.get("http://localhost:3000/api/house_plans");
       setHousePlans(response.data); // Assuming response.data contains name, hometown, imageUrl, etc.
     })();
   }, []);
