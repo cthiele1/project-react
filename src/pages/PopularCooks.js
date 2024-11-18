@@ -2,26 +2,50 @@ import React, { useState, useEffect } from "react";
 import "../styles/cooks.css";
 import Header from "../components/Header";
 import House from "../components/House";
+import AddHousePlan from "../components/AddHousePlan";
 import axios from "axios";
 
 const PopularCooks = () => {
   const [housePlans, setHousePlans] = useState([]);
+  const [showAddDialog, setShowAddDialog] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(
-        "https://inclass-backend.onrender.com/api/house_plans"
-      );
+      const response = await axios.get("http://localhost:3001/api/house_plans");
       setHousePlans(response.data);
     })();
   }, []);
+
+  const openAddDialog = () => {
+    setShowAddDialog(true);
+  };
+
+  const closeAddDialog = () => {
+    setShowAddDialog(false);
+  };
+
+  const updateHousePlans = (housePlan) => {
+    setHousePlans((houses) => [...houses, housePlan]);
+  };
 
   return (
     <>
       <Header />
       <div id="main-heading">
         <h2>These are the main contributors to this website:</h2>
+        <button id="add-house" onClick={openAddDialog}>
+          +
+        </button>
+        {showAddDialog ? (
+          <AddHousePlan
+            closeDialog={closeAddDialog}
+            showNewHouse={updateHousePlans}
+          />
+        ) : (
+          ""
+        )}
       </div>
+
       <br />
       <div className="cook-container">
         {housePlans.map((housePlan, index) => {
