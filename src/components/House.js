@@ -9,7 +9,7 @@ function House({ name, hometown, favorite_recipe, rating, goals, img_name }) {
       <h3>{name}</h3>
       <p>Hometown: {hometown}</p>
       <p>Favorite Recipe: {favorite_recipe}</p>
-      <p>Rating: {rating}/5.0</p>
+      <p>Rating: {rating}/5</p>
       <p>Service Organization: {goals}</p>
     </section>
   );

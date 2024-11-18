@@ -43,7 +43,7 @@ const HousePlan = (props) => {
               _id={housePlan._id}
               name={housePlan.name}
               size={housePlan.size}
-              main_image={housePlan.main_image}
+              img_name={housePlan.image_name}
             />
           ) : (
             ""
@@ -52,7 +52,7 @@ const HousePlan = (props) => {
           <section className="house-plan columns">
             <section className="feature-image">
               <img
-                src={"http://localhost:3001/images/" + housePlan.main_image}
+                src={"http://localhost:3001/images/" + housePlan.img_name}
                 alt={housePlan.name}
               />
             </section>

@@ -22,20 +22,28 @@ const AddHousePlan = (props) => {
     setResult("Sending....");
 
     const formData = new FormData(event.target);
-    console.log(...formData);
 
-    const response = await fetch("http://localhost:3001/api/house_plans/", {
-      method: "POST",
-      body: formData,
+    formData.forEach((value, key) => {
+      console.log(key, value);
     });
 
-    if (response.status === 200) {
-      setResult("House plan added successfully!");
-      props.showNewHouse(await response.json());
-      event.target.reset();
-      props.closeDialog();
-    } else {
-      setResult("Error adding house plan");
+    try {
+      const response = await fetch("http://localhost:3001/api/house_plans/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.status === 200) {
+        setResult("House plan added successfully!");
+        props.showNewHouse(await response.json());
+        setInputs({});
+        event.target.reset();
+        props.closeDialog();
+      } else {
+        setResult("Error adding house plan");
+      }
+    } catch (error) {
+      setResult("Network error: Unable to add house plan");
     }
   };
 
@@ -93,9 +101,10 @@ const AddHousePlan = (props) => {
                 required
                 value={inputs.rating || ""}
                 onChange={(e) => {
-                  let value = parseInt(e.target.value);
-                  if (value > 5) value = 5;
-                  if (value < 1) value = 1;
+                  let value = Math.max(
+                    1,
+                    Math.min(5, parseInt(e.target.value))
+                  );
                   setInputs((values) => ({ ...values, rating: value }));
                 }}
                 min="1"
@@ -107,13 +116,15 @@ const AddHousePlan = (props) => {
             </p>
             <section className="columns">
               <p id="img-prev-section">
-                <img
-                  id="img-prev"
-                  alt=""
-                  src={
-                    inputs.img != null ? URL.createObjectURL(inputs.img) : ""
-                  }
-                />
+                {inputs.img ? (
+                  <img
+                    id="img-prev"
+                    alt="Preview"
+                    src={URL.createObjectURL(inputs.img)}
+                  />
+                ) : (
+                  <span>No image selected</span>
+                )}
               </p>
               <p id="img-upload">
                 <label htmlFor="img">Upload Image:</label>
