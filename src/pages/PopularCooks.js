@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/cooks.css";
 import Header from "../components/Header";
-import House from "../components/House";
-import AddHousePlan from "../components/AddHousePlan";
+import House from "../components/Cook";
+import AddHousePlan from "../components/AddCookPlan";
 import axios from "axios";
 
 const PopularCooks = () => {
@@ -50,16 +50,16 @@ const PopularCooks = () => {
 
       <br />
       <div className="cook-container">
-        {housePlans.map((housePlan, index) => {
+        {housePlans.map((cookPlan, index) => {
           return (
             <div className="cook-section" key={index}>
               <House
-                img_name={housePlan.img_name}
-                name={housePlan.name}
-                hometown={housePlan.hometown}
-                favorite_recipe={housePlan.favorite_recipe}
-                rating={housePlan.rating}
-                goals={housePlan.goals}
+                img_name={cookPlan.img_name}
+                name={cookPlan.name}
+                hometown={cookPlan.hometown}
+                favorite_recipe={cookPlan.favorite_recipe}
+                rating={cookPlan.rating}
+                goals={cookPlan.goals}
               />
             </div>
           );

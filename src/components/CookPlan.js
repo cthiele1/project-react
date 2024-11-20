@@ -1,11 +1,11 @@
-import "../css/HousePlan.css";
+import "../css/CookPlan.css";
 import React, { useState } from "react";
 
 const HousePlan = (props) => {
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [housePlan, setHousePlan] = useState(props);
-  const [showHousePlan, setShowHousePlan] = useState(true);
+  const [housePlan, setCookPlan] = useState(props);
+  const [showCookPlan, setShowCookPlan] = useState(true);
 
   const openEditDialog = () => {
     setShowEditDialog(true);
@@ -25,10 +25,10 @@ const HousePlan = (props) => {
 
   return (
     <>
-      {showHousePlan ? (
+      {showCookPlan ? (
         <div>
           {showDeleteDialog ? (
-            <DeleteHousePlan
+            <DeleteCookPlan
               closeDialog={closeDeleteDialog}
               name={housePlan.name}
               _id={housePlan._id}
@@ -38,7 +38,7 @@ const HousePlan = (props) => {
           )}
 
           {showEditDialog ? (
-            <EditHousePlan
+            <EditCookPlan
               closeDialog={closeEditDialog}
               _id={housePlan._id}
               name={housePlan.name}
@@ -48,7 +48,7 @@ const HousePlan = (props) => {
             ""
           )}
 
-          <section className="house-plan columns">
+          <section className="cook-plan columns">
             <section className="feature-image">
               <img
                 src={"http://localhost:3001/" + housePlan.img_name}

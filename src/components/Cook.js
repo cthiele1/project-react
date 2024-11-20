@@ -1,6 +1,6 @@
 import React from "react";
 
-function House({ name, hometown, favorite_recipe, rating, goals, img_name }) {
+function Cook({ name, hometown, favorite_recipe, rating, goals, img_name }) {
   return (
     <section className="house">
       {
@@ -19,4 +19,4 @@ function House({ name, hometown, favorite_recipe, rating, goals, img_name }) {
   );
 }
 
-export default House;
+export default Cook;

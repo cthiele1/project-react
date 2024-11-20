@@ -1,7 +1,7 @@
 import "../styles/Dialog.css";
 import React, { useState } from "react";
 
-const AddHousePlan = (props) => {
+const AddCookPlan = (props) => {
   const [inputs, setInputs] = useState({});
   const [result, setResult] = useState("");
 
@@ -37,16 +37,16 @@ const AddHousePlan = (props) => {
       );
 
       if (response.status === 200) {
-        setResult("House plan added successfully!");
+        setResult("Cook added successfully!");
         props.showNewHouse(await response.json());
         setInputs({});
         event.target.reset();
         props.closeDialog();
       } else {
-        setResult("Error adding house plan");
+        setResult("Error adding cook");
       }
     } catch (error) {
-      setResult("Network error: Unable to add house plan");
+      setResult("Network error: Unable to add cook");
     }
   };
 
@@ -151,4 +151,4 @@ const AddHousePlan = (props) => {
   );
 };
 
-export default AddHousePlan;
+export default AddCookPlan;
