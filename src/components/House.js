@@ -5,7 +5,7 @@ function House({ name, hometown, favorite_recipe, rating, goals, img_name }) {
     <section className="house">
       {
         <img
-          src={`http://localhost:3001/${img_name}`}
+          src={`https://inclass-backend.onrender.com/images/${img_name}`}
           alt={name}
           className="cook-image"
         />

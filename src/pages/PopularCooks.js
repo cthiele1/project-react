@@ -11,7 +11,9 @@ const PopularCooks = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3001/api/house_plans");
+      const response = await axios.get(
+        "https://inclass-backend.onrender.com/api/house_plans"
+      );
       setHousePlans(response.data);
     })();
   }, []);
@@ -52,7 +54,7 @@ const PopularCooks = () => {
           return (
             <div className="cook-section" key={index}>
               <House
-                img_name={`cook${index + 1}.jpg`}
+                img_name={housePlan.img_name}
                 name={housePlan.name}
                 hometown={housePlan.hometown}
                 favorite_recipe={housePlan.favorite_recipe}

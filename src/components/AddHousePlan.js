@@ -28,10 +28,13 @@ const AddHousePlan = (props) => {
     });
 
     try {
-      const response = await fetch("http://localhost:3001/api/house_plans/", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://inclass-backend.onrender.com/api/house_plans",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (response.status === 200) {
         setResult("House plan added successfully!");
