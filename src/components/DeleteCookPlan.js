@@ -5,7 +5,7 @@ const DeleteCookPlan = (props) => {
 
   const deleteCookPlan = async () => {
     const response = await fetch(
-      `https://inclass-backend.onrender.com/api/house_plans/${props._id}`,
+      `http://localhost:3001/api/cooks/${props._id},`,
       {
         method: "DELETE",
       }
@@ -32,9 +32,10 @@ const DeleteCookPlan = (props) => {
             &times;
           </span>
           <div id="delete-content">
-            <h3>Are you sure you want to delete the {props.name}</h3>
+            <h3>Are you sure you want to delete this? </h3>
             <section>
               <button onClick={props.closeDialog}>No</button>
+
               <button onClick={deleteCookPlan}>Yes</button>
             </section>
             <span>{result}</span>
