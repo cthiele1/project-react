@@ -58,10 +58,6 @@ const HousePlan = (props) => {
             ""
           )}
 
-          <section id="change-buttons">
-            <button onClick={openEditDialog}>✏️</button>
-            <button onClick={openDeleteDialog}>❌</button>
-          </section>
           <p>Name: {props.name}</p>
           <p>Hometown: {props.hometown}</p>
           <p>Favorite Recipe: {props.favorte_recipe}</p>
