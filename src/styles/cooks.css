@@ -233,3 +233,15 @@ h3 {
     flex: 1;
   }
 }
+
+.delete-button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
