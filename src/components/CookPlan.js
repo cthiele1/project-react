@@ -46,7 +46,6 @@ const HousePlan = (props) => {
           ) : (
             ""
           )}
-
           {showEditDialog ? (
             <EditCookPlan
               closeDialog={closeEditDialog}
@@ -59,20 +58,14 @@ const HousePlan = (props) => {
             ""
           )}
 
-          <section className="info">
-            <section id="change-buttons">
-              <a href="#" onClick={openEditDialog}>
-                &#9998;
-              </a>
-              <a href="#" onClick={openDeleteDialog}>
-                &#x2715;
-              </a>
-            </section>
-            <p>Name: {props.name}</p>
-            <p>Hometown: {props.hometown}</p>
-            <p>Favorite Recipe: {props.favorte_recipe}</p>
-            <p>Rating: {props.rating}</p>
+          <section id="change-buttons">
+            <button onClick={openEditDialog}>✏️</button>
+            <button onClick={openDeleteDialog}>❌</button>
           </section>
+          <p>Name: {props.name}</p>
+          <p>Hometown: {props.hometown}</p>
+          <p>Favorite Recipe: {props.favorte_recipe}</p>
+          <p>Rating: {props.rating}</p>
         </div>
       ) : (
         ""
