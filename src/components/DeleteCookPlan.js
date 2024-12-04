@@ -7,7 +7,7 @@ const DeleteCookPlan = (props) => {
     try {
       console.log(props);
       const response = await fetch(
-        `https://inclass-backend.onrender.com/api/house_plans/${props._id}`,
+        `http://localhost:3001/api/house_plans/${props._id}`,
         {
           method: "DELETE",
         }
