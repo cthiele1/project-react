@@ -18,7 +18,7 @@ const PopularCooks = () => {
   const fetchData = async () => {
     try {
       const respose = await axios.get(
-        "https://inclass-backend.onrender.com/api/house_plans/"
+        "https://inclass-backend.onrender.com/api/house_plans"
       );
       if (respose.status === 200) {
         setHousePlans(respose.data);
@@ -124,6 +124,7 @@ const PopularCooks = () => {
           closeDialog={closeEditDialog}
           cookPlan={cookPlanToEdit}
           fetchData={fetchData}
+          _id={cookPlanToEdit?._id}
         />
       )}
 
