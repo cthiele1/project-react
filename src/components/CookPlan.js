@@ -12,7 +12,7 @@ const HousePlan = (props) => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(
-        "http://localhost:3001/api/house_plans/"
+        "https://inclass-backend.onrender.com/api/house_plans/"
       );
       setCooks(response.data);
     })();
