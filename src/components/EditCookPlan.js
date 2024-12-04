@@ -26,7 +26,7 @@ const EditCookPlan = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3001/api/house_plans/${_id}`, {
+    fetch(`https://inclass-backend.onrender.com/api/house_plans/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

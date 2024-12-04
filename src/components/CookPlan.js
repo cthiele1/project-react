@@ -1,5 +1,5 @@
 import "../css/CookPlan.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DeleteCookPlan from "./DeleteCookPlan";
 import EditCookPlan from "./EditCookPlan";
 const HousePlan = (props) => {
@@ -7,6 +7,16 @@ const HousePlan = (props) => {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [CookPlan, setCookPlan] = useState(props);
   const [showCookPlan, setShowCookPlan] = useState(true);
+
+  //wait until after page is rendered to do the asyncronous loading
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get(
+        "https://inclass-backend.onrender.com/api/house_plans/"
+      );
+      setCooks(response.data);
+    })();
+  }, []);
 
   const openEditDialog = () => {
     setShowEditDialog(true);
