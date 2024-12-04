@@ -20,16 +20,13 @@ const EditCookPlan = ({ closeDialog, cookPlan, fetchData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(
-      `https://inclass-backend.onrender.com/api/house_plans/${cookPlan._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    )
+    fetch(`http://localhost:3001/api/house_plans/${cookPlan._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
