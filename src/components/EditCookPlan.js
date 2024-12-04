@@ -36,7 +36,7 @@ const EditCookPlan = ({
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        closeDialog();
+        closeDialog(); // Close the dialog after successful save
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -77,9 +77,10 @@ const EditCookPlan = ({
           value={formData.rating}
           onChange={handleChange}
         />
+
+        <br />
+        <button type="submit">Save</button>
       </form>
-      <br></br>
-      <button type="submit">Save</button>
       <button type="button" onClick={closeDialog}>
         Cancel
       </button>
