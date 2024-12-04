@@ -15,14 +15,28 @@ const PopularCooks = () => {
   const [cookPlanToDelete, setCookPlanToDelete] = useState(null); // Store the cook plan to delete
   const [cookPlanToEdit, setCookPlanToEdit] = useState(null); // Store the cook plan to edit
 
+  const fetchData = async () => {
+    try {
+      const respose = await axios.get("http://localhost:3001/api/house_plans");
+      if (respose.status === 200) {
+        setHousePlans(respose.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    (async () => {
-      const response = await axios.get(
-        "https://inclass-backend.onrender.com/api/house_plans"
-      );
-      setHousePlans(response.data);
-    })();
+    // (async () => {
+    //   const response = await axios.get(
+    //     "http://localhost:3001/api/house_plans"
+    //   );
+    //   setHousePlans(response.data);
+    // })();
+    fetchData();
   }, []);
+
+  // https://inclass-backend.onrender.com
 
   const openAddDialog = () => {
     setShowAddDialog(true);
@@ -51,6 +65,7 @@ const PopularCooks = () => {
   // Open the edit dialog and store the cook plan to be edited
   const openEditDialog = (cookPlan) => {
     setCookPlanToEdit(cookPlan);
+    console.log(cookPlan);
     setShowEditDialog(true);
   };
 
@@ -59,6 +74,8 @@ const PopularCooks = () => {
     setShowEditDialog(false);
     setCookPlanToEdit(null);
   };
+
+  console.log(showEditDialog);
 
   // Remove the cook plan from the list after deletion
   const removeCookPlanFromList = (id) => {
@@ -103,8 +120,8 @@ const PopularCooks = () => {
       {showEditDialog && (
         <EditCookPlan
           closeDialog={closeEditDialog}
-          updateCookPlan={updateCookPlanInList}
           cookPlan={cookPlanToEdit}
+          fetchData={fetchData}
         />
       )}
 

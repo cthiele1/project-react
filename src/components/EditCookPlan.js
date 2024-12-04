@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 
-const EditCookPlan = ({
-  closeDialog,
-  _id,
-  name,
-  hometown,
-  favorite_recipe,
-  rating,
-}) => {
+const EditCookPlan = ({ closeDialog, cookPlan, fetchData }) => {
   const [formData, setFormData] = useState({
-    name,
-    hometown,
-    favorite_recipe,
-    rating,
+    name: cookPlan.name,
+    hometown: cookPlan.hometown,
+    favorite_recipe: cookPlan.favorite_recipe,
+    rating: cookPlan.rating,
+    goals: cookPlan.goals,
   });
 
   const handleChange = (e) => {
@@ -26,7 +20,7 @@ const EditCookPlan = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`https://inclass-backend.onrender.com/api/house_plans/${_id}`, {
+    fetch(`http://localhost:3001/api/house_plans/${cookPlan._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +30,8 @@ const EditCookPlan = ({
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        fetchData();
+        // console.log("succcc")
         closeDialog(); // Close the dialog after successful save
       })
       .catch((error) => {
