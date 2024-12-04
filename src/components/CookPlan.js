@@ -1,7 +1,7 @@
 import "../css/CookPlan.css";
 import React, { useState } from "react";
 import DeleteCookPlan from "./DeleteCookPlan";
-
+import EditCookPlan from "./EditCookPlan";
 const HousePlan = (props) => {
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -40,8 +40,8 @@ const HousePlan = (props) => {
             <DeleteCookPlan
               closeDialog={closeDeleteDialog}
               hideCookPlan={hideCookPlan}
-              name={CookPlan.name}
-              _id={CookPlan._id}
+              name="Feajgoe"
+              _id="9"
             />
           ) : (
             ""
@@ -58,6 +58,7 @@ const HousePlan = (props) => {
             ""
           )}
 
+          <p>Test ID: {CookPlan._id}</p>
           <p>Name: {props.name}</p>
           <p>Hometown: {props.hometown}</p>
           <p>Favorite Recipe: {props.favorte_recipe}</p>

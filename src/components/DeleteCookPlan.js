@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 
 const DeleteCookPlan = (props) => {
+  const [name, setName] = useState(props);
   const [result, setResult] = useState("");
-
-  // Use the id from props to target a specific cook plan
-  const { id } = props;
-
   const deleteCookPlan = async () => {
     try {
+      console.log(props);
       const response = await fetch(
-        `http://localhost:3001/api/house_plans/${id}`,
+        `http://localhost:3001/api/house_plans/${props._id}`,
         {
           method: "DELETE",
         }
@@ -17,8 +15,8 @@ const DeleteCookPlan = (props) => {
 
       if (response.status === 200) {
         setResult("Cook Plan Successfully Deleted");
-        props.hideCookPlan(); // Assuming this hides the cook plan from the list
-        props.closeDialog(); // Close the dialog
+        props.hideCookPlan();
+        props.closeDialog();
       } else {
         setResult("Sorry, we couldn't delete your Cook Plan at this time.");
       }
