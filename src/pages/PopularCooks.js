@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import House from "../components/Cook";
 import AddHousePlan from "../components/AddCookPlan";
 import DeleteCookPlan from "../components/DeleteCookPlan";
-import EditCookPlan from "../components/EditCookPlan"; // Import the EditCookPlan component
+import EditCookPlan from "../components/EditCookPlan";
 import axios from "axios";
 
 const PopularCooks = () => {
@@ -14,7 +14,7 @@ const PopularCooks = () => {
   const [showEditDialog, setShowEditDialog] = useState(false); // State to show/hide the edit dialog
   const [cookPlanToDelete, setCookPlanToDelete] = useState(null); // Store the cook plan to delete
   const [cookPlanToEdit, setCookPlanToEdit] = useState(null); // Store the cook plan to edit
-
+  console.log(housePlans);
   const fetchData = async () => {
     try {
       const respose = await axios.get(
@@ -82,7 +82,7 @@ const PopularCooks = () => {
   // Remove the cook plan from the list after deletion
   const removeCookPlanFromList = (id) => {
     setHousePlans((prevHousePlans) =>
-      prevHousePlans.filter((plan) => plan._id !== id)
+      prevHousePlans.filter((plan) => plan.id !== id)
     );
   };
 
@@ -90,7 +90,7 @@ const PopularCooks = () => {
   const updateCookPlanInList = (updatedCookPlan) => {
     setHousePlans((prevHousePlans) =>
       prevHousePlans.map((plan) =>
-        plan._id === updatedCookPlan._id ? updatedCookPlan : plan
+        plan.id === updatedCookPlan.id ? updatedCookPlan : plan
       )
     );
   };
@@ -115,7 +115,7 @@ const PopularCooks = () => {
         <DeleteCookPlan
           closeDialog={closeDeleteDialog}
           hideCookPlan={removeCookPlanFromList}
-          _id={cookPlanToDelete?._id}
+          id={cookPlanToDelete?.id}
         />
       )}
 
@@ -124,27 +124,26 @@ const PopularCooks = () => {
           closeDialog={closeEditDialog}
           cookPlan={cookPlanToEdit}
           fetchData={fetchData}
-          _id={cookPlanToEdit?._id}
+          id={cookPlanToEdit?.id}
         />
       )}
 
       <br />
       <div className="cook-container">
         {housePlans.map((cookPlan) => (
-          <div className="cook-section" key={cookPlan._id}>
-            <p>Test ID: {cookPlan._id}</p>
+          <div className="cook-section" key={cookPlan.id}>
+            <p>Test ID: {cookPlan.id}</p>
             <House
               img_name={cookPlan.img_name}
-              _id={cookPlan._id}
+              id={cookPlan.id}
               name={cookPlan.name}
               hometown={cookPlan.hometown}
               favorite_recipe={cookPlan.favorite_recipe}
               rating={cookPlan.rating}
-              goals={cookPlan.goals}
             />
             <button
               className="delete-button"
-              _id={cookPlan._id}
+              id={cookPlan.id}
               onClick={() => openDeleteDialog(cookPlan)}
             >
               ❌

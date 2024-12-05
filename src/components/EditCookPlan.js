@@ -6,7 +6,6 @@ const EditCookPlan = ({ closeDialog, cookPlan, fetchData }) => {
     hometown: cookPlan.hometown,
     favorite_recipe: cookPlan.favorite_recipe,
     rating: cookPlan.rating,
-    goals: cookPlan.goals,
   });
 
   const handleChange = (e) => {
@@ -21,7 +20,7 @@ const EditCookPlan = ({ closeDialog, cookPlan, fetchData }) => {
     e.preventDefault();
 
     fetch(
-      `https://inclass-backend.onrender.com/api/house_plans/${cookPlan._id}`,
+      `https://inclass-backend.onrender.com/api/house_plans/${cookPlan.id}`,
       {
         method: "PUT",
         headers: {

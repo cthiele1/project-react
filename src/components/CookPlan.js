@@ -51,7 +51,7 @@ const HousePlan = (props) => {
               closeDialog={closeDeleteDialog}
               hideCookPlan={hideCookPlan}
               name="Feajgoe"
-              _id="9"
+              id="9"
             />
           ) : (
             ""
@@ -60,7 +60,7 @@ const HousePlan = (props) => {
             <EditCookPlan
               closeDialog={closeEditDialog}
               updateCook={editCookPlan}
-              _id={CookPlan._id}
+              id={CookPlan.id}
               name={CookPlan.name}
               size={CookPlan.size}
             />
@@ -68,7 +68,7 @@ const HousePlan = (props) => {
             ""
           )}
 
-          <p>Test ID: {CookPlan._id}</p>
+          <p>Test ID: {CookPlan.id}</p>
           <p>Name: {props.name}</p>
           <p>Hometown: {props.hometown}</p>
           <p>Favorite Recipe: {props.favorte_recipe}</p>

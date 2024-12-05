@@ -28,14 +28,19 @@ const AddCookPlan = (props) => {
     });
 
     try {
-      const response = await fetch("http://localhost:3001/api/house_plans", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://inclass-backend.onrender.com/api/house_plans",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (response.status === 200) {
+        const result = await response.json();
+        console.log(result);
         setResult("Cook added successfully!");
-        props.showNewHouse(await response.json());
+        props.showNewHouse(result);
         setInputs({});
         event.target.reset();
         props.closeDialog();
@@ -43,6 +48,7 @@ const AddCookPlan = (props) => {
         setResult("Error adding cook");
       }
     } catch (error) {
+      console.log(error);
       setResult("Network error: Unable to add cook");
     }
   };

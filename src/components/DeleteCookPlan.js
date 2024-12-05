@@ -7,7 +7,7 @@ const DeleteCookPlan = (props) => {
     try {
       console.log(props);
       const response = await fetch(
-        `https://inclass-backend.onrender.com/api/house_plans/${props._id}`,
+        `https://inclass-backend.onrender.com/api/house_plans/${props.id}`,
         {
           method: "DELETE",
         }
@@ -15,7 +15,7 @@ const DeleteCookPlan = (props) => {
 
       if (response.status === 200) {
         setResult("Cook Plan Successfully Deleted");
-        props.hideCookPlan();
+        props.hideCookPlan(props.id);
         props.closeDialog();
       } else {
         setResult("Sorry, we couldn't delete your Cook Plan at this time.");
