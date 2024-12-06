@@ -20,7 +20,7 @@ const EditCookPlan = ({ closeDialog, cookPlan, fetchData }) => {
     e.preventDefault();
 
     fetch(
-      `https://inclass-backend.onrender.com/api/house_plans/${cookPlan.id}`,
+      `https://inclass-backend.onrender.com/api/house_plans/${cookPlan._id}`,
       {
         method: "PUT",
         headers: {

@@ -82,7 +82,7 @@ const PopularCooks = () => {
   // Remove the cook plan from the list after deletion
   const removeCookPlanFromList = (id) => {
     setHousePlans((prevHousePlans) =>
-      prevHousePlans.filter((plan) => plan.id !== id)
+      prevHousePlans.filter((plan) => plan._id !== id)
     );
   };
 
@@ -90,7 +90,7 @@ const PopularCooks = () => {
   const updateCookPlanInList = (updatedCookPlan) => {
     setHousePlans((prevHousePlans) =>
       prevHousePlans.map((plan) =>
-        plan.id === updatedCookPlan.id ? updatedCookPlan : plan
+        plan._id === updatedCookPlan._id ? updatedCookPlan : plan
       )
     );
   };
@@ -115,7 +115,7 @@ const PopularCooks = () => {
         <DeleteCookPlan
           closeDialog={closeDeleteDialog}
           hideCookPlan={removeCookPlanFromList}
-          id={cookPlanToDelete?.id}
+          id={cookPlanToDelete?._id}
         />
       )}
 
@@ -124,18 +124,18 @@ const PopularCooks = () => {
           closeDialog={closeEditDialog}
           cookPlan={cookPlanToEdit}
           fetchData={fetchData}
-          id={cookPlanToEdit?.id}
+          id={cookPlanToEdit?._id}
         />
       )}
 
       <br />
       <div className="cook-container">
         {housePlans.map((cookPlan) => (
-          <div className="cook-section" key={cookPlan.id}>
-            <p>Test ID: {cookPlan.id}</p>
+          <div className="cook-section" key={cookPlan._id}>
+            <p>Test ID: {cookPlan._id}</p>
             <House
               img_name={cookPlan.img_name}
-              id={cookPlan.id}
+              id={cookPlan._id}
               name={cookPlan.name}
               hometown={cookPlan.hometown}
               favorite_recipe={cookPlan.favorite_recipe}
@@ -143,7 +143,7 @@ const PopularCooks = () => {
             />
             <button
               className="delete-button"
-              id={cookPlan.id}
+              id={cookPlan._id}
               onClick={() => openDeleteDialog(cookPlan)}
             >
               ❌
